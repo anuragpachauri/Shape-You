@@ -1,0 +1,49 @@
+ <% include ./partials/navBar %>
+ <% include ./partials/messages %>
+<div class="sign-up-page">
+    <p>Sign up</p>
+    <div class="inner-sign-up-page">
+        <form action="/user-signup" method="post">
+            <p id="form-title">Personal Detail</p>
+            <div class="row1">
+                <input type="text" name="first_name" id="First _ame" placeholder="First Name" class="sign" value="<%= typeof first_name != 'undefined' ? first_name : '' %>" required>
+                <input type="text" name="last_name" id="last_name" placeholder="Last Name" class="sign" value="<%= typeof last_name != 'undefined' ? last_name : '' %>" required>
+            </div>
+            <div class="row2">
+                <input type="password" name="password" id="password" placeholder="Password" class="sign" required>
+                <input type="password" name="C_password" id="C_password" placeholder="Confim Password" class="sign" required>
+            </div>
+            <div class="row3">
+                <input type="email" name="email" id="email" placeholder="Email" class="sign email" value="<%= typeof email != 'undefined' ? email : '' %>" required>
+                <input type="number" name="phone" id="phone" placeholder="Phone Number" class="sign email" value="<%= typeof phone != 'undefined' ? phone : '' %>" required>
+            </div>
+            <!-- measurment -->
+            <p id="form-title">Measurments in (inchs)*</p>
+            <div class="row1">
+                <input type="number" name="belly" id="belly" placeholder="Belly(Stomach)" class="sign" value="<%= typeof belly != 'undefined' ? belly : '' %>" required>
+                <input type="number" name="arm" id="arm" placeholder="Arm Size " class="sign" value="<%= typeof arm != 'undefined' ? arm : '' %>" required>
+            </div>
+            <div class="row2">
+                <input type="number" name="neck" id="neck" placeholder="Neck Size" class="sign" value="<%= typeof neck != 'undefined' ? neck : '' %>" required>
+                <input type="number" name="thigh" id="thigh" placeholder="Thigh Size" class="sign" value="<%= typeof thigh != 'undefined' ? thigh : '' %>" required>
+            </div>
+            <div class="row3">
+                <input type="number" name="height" id="height" placeholder="Height in CM*" class="sign" value="<%= typeof height != 'undefined' ? height : '' %>" required>
+                <input type="number" name="weight" id="weight" placeholder="Weight in KG*" class="sign" value="<%= typeof weight != 'undefined' ? weight : '' %>" required>
+            </div>
+            <!-- goals -->
+            <p id="form-title">Goals</p>
+            <div class="row3">
+                <input type="number" name="g_weight" id="weight" placeholder="Weight in KG*" class="sign" value="<%= typeof g_weight != 'undefined' ? g_weight : '' %>" required>
+                <select name="goal" id="goal" required>
+                    <option value="fat loss">Fat Loss</option>
+                    <option value="fat loss">Weight Loss</option>
+                    <option value="fat loss">Weight Gain</option>
+                    <option value="fat loss">Muscle Building</option>
+                </select>
+            </div>
+            <button type="submit" id="signup-btn">Sing up</button>
+        </form>
+    </div>
+</div>
+<% include ./partials/footer %>
